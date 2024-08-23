@@ -1,13 +1,14 @@
 {
-  "name": "gitlab-chef",
-  "version": "1.0.0",
-  "description": "Your project description",
-  "main": "index.js",
   "scripts": {
-    "dev:firefox:run:watch": "web-ext run"
+    "dev:firefox:run:watch": "cd dist/firefox && web-ext run",
+    "help": "webextension-toolbox dev firefox --help",
+    "x": "webextension-toolbox dev firefox"
   },
   "author": "Martin Grzeslowski",
   "license": "GPLv3",
+  "version": "1.0.0",
+  "name": "gitlab-chef",
+  "description": "Add some recipes to run your pipelines!",
   "devDependencies": {
     "@webextension-toolbox/webextension-toolbox": "^7.1.1",
     "web-ext": "^7.5.0"
