@@ -1,38 +1,52 @@
 <!DOCTYPE html>
+<!--suppress HtmlUnknownTarget -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe Book</title>
-    <link rel="stylesheet" href="/app/recipecipe/new.css">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="/recipe/new.css">
 </head>
-<body>
-<h1>Recipe Book</h1>
+<body class="container mt-5">
+<h1 class="mb-4">Recipe Book</h1>
 
-<div>
-    <h2>Add Recipe</h2>
-    <label for="recipeName">Recipe Name:</label><br>
-    <input type="text" id="recipeName" placeholder="Enter recipe name"><br><br>
-
-    <label for="recipeEmoji">Recipe Emoji (optional):</label><br>
-    <input type="text" id="recipeEmoji" placeholder="Enter emoji"><br><br>
-
-    <div id="variables">
-        <h3>Recipe Variables</h3>
-        <div class="variable">
-            <input type="text" class="key" placeholder="Enter key">
-            <input type="text" class="value" placeholder="Enter value">
-            <button class="remove-variable">Remove</button>
+<div class="card mb-4">
+    <div class="card-body">
+        <h2 class="card-title">Add Recipe</h2>
+        <div class="form-group">
+            <label for="recipeName">Recipe Name:</label>
+            <input type="text" id="recipeName" class="form-control" placeholder="Enter recipe name">
         </div>
-    </div>
-    <button id="add-variable">Add Another Variable</button><br><br>
 
-    <button id="add-recipe">Add Recipe</button>
+        <div class="form-group">
+            <label for="recipeEmoji">Recipe Emoji (optional):</label>
+            <input type="text" id="recipeEmoji" class="form-control" placeholder="Enter emoji">
+        </div>
+
+        <div id="variables" class="mb-3">
+            <h4>Recipe Variables</h4>
+            <div class="variable form-row align-items-center mb-2">
+                <div class="col">
+                    <input type="text" class="form-control key" placeholder="Enter key">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control value" placeholder="Enter value">
+                </div>
+                <div class="col-auto">
+                    <button class="btn btn-danger remove-variable">Remove</button>
+                </div>
+            </div>
+        </div>
+        <button id="add-variable" class="btn btn-secondary mb-3">Add Another Variable</button>
+        <button id="add-recipe" class="btn btn-primary">Add Recipe</button>
+    </div>
 </div>
 
 <h2>Recipes</h2>
-<div id="recipes"></div>
+<div id="recipes" class="mb-4"></div>
 
-<script src="/app/recipecipe/new.js"></script>
+<script src="/bootstrap/js/bootstrap.js"></script>
+<script src="/recipe/new.js"></script>
 </body>
 </html>

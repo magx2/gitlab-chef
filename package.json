@@ -2,7 +2,8 @@
   "scripts": {
     "dev:firefox:run:watch": "cd dist/firefox && web-ext run",
     "help": "webextension-toolbox dev firefox --help",
-    "x": "webextension-toolbox dev firefox"
+    "dev:firefox:dev": "webextension-toolbox dev --no-auto-reload firefox",
+    "dev:firefox:build": "webextension-toolbox build --devtool=inline-cheap-source-map  firefox"
   },
   "author": "Martin Grzeslowski",
   "license": "GPLv3",
