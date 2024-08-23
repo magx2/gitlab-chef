@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Book</title>
+    <link rel="stylesheet" href="/recipe/new.css">
+</head>
+<body>
+<h1>Recipe Book</h1>
+
+<div>
+    <h2>Add Recipe</h2>
+    <label for="recipeName">Recipe Name:</label><br>
+    <input type="text" id="recipeName" placeholder="Enter recipe name"><br><br>
+
+    <label for="recipeEmoji">Recipe Emoji (optional):</label><br>
+    <input type="text" id="recipeEmoji" placeholder="Enter emoji"><br><br>
+
+    <div id="variables">
+        <h3>Recipe Variables</h3>
+        <div class="variable">
+            <input type="text" class="key" placeholder="Enter key">
+            <input type="text" class="value" placeholder="Enter value">
+            <button class="remove-variable">Remove</button>
+        </div>
+    </div>
+    <button id="add-variable">Add Another Variable</button><br><br>
+
+    <button id="add-recipe">Add Recipe</button>
+</div>
+
+<h2>Recipes</h2>
+<div id="recipes"></div>
+
+<script src="/recipe/new.js"></script>
+</body>
+</html>

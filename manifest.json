@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+  "name": "Gitlab Chef",
+  "version": "1.0",
+  "description": "Adds a red border to all webpages matching mozilla.org.",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "icons": {
+    "48": "icons/logo.svg"
+  },
+  "browser_action": {
+    "default_icon": "icons/logo.svg",
+    "default_title": "Gitlab Chef",
+    "default_popup": "popup/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.gitlab.com/*/pipelines/new"
+      ],
+      "js": [
+        "content_scripts/chef.js"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "gitlab-chef",
+  "version": "1.0.0",
+  "description": "Your project description",
+  "main": "index.js",
+  "scripts": {
+    "dev:firefox:run:watch": "web-ext run"
+  },
+  "author": "Martin Grzeslowski",
+  "license": "GPLv3",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "web-ext": "^7.5.0"
+  }
+}
