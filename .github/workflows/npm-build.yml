@@ -17,7 +17,4 @@ jobs:
         with:
           node-version: 20
       - run: npm install
-      - run: |
-          git config --global user.name 'GitHub Actions'
-          git config --global user.email 'actions@github.com'
-          npm run build
+      - run: npm run build
