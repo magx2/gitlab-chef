@@ -6,7 +6,8 @@
     "build:firefox": "webextension-toolbox build firefox",
     "dev:chrome:dev": "webextension-toolbox dev chrome",
     "build:chrome": "webextension-toolbox build chrome",
-    "build": "build:firefox && build:chrome"
+    "build": "npm run build:firefox && npm run build:chrome",
+    "release": "npm run build && release-it"
   },
   "author": "Martin Grzeslowski",
   "license": "GPLv3",
@@ -15,7 +16,8 @@
   "description": "Add some recipes to run your pipelines!",
   "devDependencies": {
     "@webextension-toolbox/webextension-toolbox": "^7.1.1",
-    "web-ext": "^7.5.0"
+    "web-ext": "^7.5.0",
+    "release-it": "^16.1.0"
   },
   "funding": [
     {
