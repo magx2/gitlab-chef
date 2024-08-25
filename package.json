@@ -7,7 +7,7 @@
     "dev:chrome:dev": "webextension-toolbox dev chrome",
     "build:chrome": "webextension-toolbox build chrome",
     "build": "npm run build:firefox && npm run build:chrome",
-    "release": "npm run build && release-it"
+    "release": "npm run build && release-it minor"
   },
   "author": "Martin Grzeslowski",
   "license": "GPLv3",
