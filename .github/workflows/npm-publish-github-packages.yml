@@ -1,4 +1,4 @@
-name: Release with Gradle
+name: Release with NPM
 on:
   workflow_dispatch:
 
