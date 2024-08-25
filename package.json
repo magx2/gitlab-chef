@@ -1,7 +1,6 @@
 {
   "scripts": {
     "dev:firefox:run:watch": "cd dist/firefox && web-ext run",
-    "help": "webextension-toolbox dev firefox --help",
     "dev:firefox:dev": "webextension-toolbox dev firefox",
     "build:firefox": "webextension-toolbox build firefox",
     "dev:chrome:dev": "webextension-toolbox dev chrome",
