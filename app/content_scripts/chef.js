@@ -18,8 +18,9 @@
         }
     ]
 
-    function findRecipe(name) {
-        for (const recipe of recipes) {
+
+    async function findRecipe(name) {
+        for (const recipe of await allRecipes()) {
             if (recipe.name === name) {
                 return recipe;
             }
@@ -27,8 +28,11 @@
         return null;
     }
 
-    function allRecipes() {
-        return recipes;
+    async function allRecipes() {
+        return (await browser.storage.local.get({
+            recipes: []
+        })).recipes
+        // return recipes;
     }
 
     async function recipeSelected(recipe) {
@@ -54,26 +58,6 @@
         }
     }
 
-    browser.runtime.onMessage.addListener((message) => {
-        let text = "<none>";
-        if (message.command === "recipe") {
-            const recipe = findRecipe(message.recipeName);
-            if (recipe !== null) {
-                text = JSON.stringify(recipe);
-            } else {
-                text = "<unknown-recipe: " + message.recipeName + ">";
-            }
-        } else if (message.command === "reset") {
-            text = "RESET"
-        }
-        document.title = text;
-        const paragraph = document.createElement("p");
-        paragraph.textContent = text;
-        // beastImage.style.height = "100vh";
-        paragraph.className = "beastify-image";
-        document.body.appendChild(paragraph);
-    });
-
     // Remove all elements with the class 'chef-btn-recipe'
     document.querySelectorAll('.chef-btn-recipe')
         .forEach(element => element.remove());
@@ -82,22 +66,26 @@
     const runPipelineButton = document.querySelector('[data-testid="run-pipeline-button"]');
     if (runPipelineButton) {
         const parentElement = runPipelineButton.parentElement;
-        allRecipes().forEach(recipe => {
-            const newButton = document.createElement('btn');
-            //prepare
-            newButton.classList.add('btn', 'chef-btn-recipe', 'btn-default', 'btn-md', 'gl-button', 'gl-ml-3');
-            const span = document.createElement('span');
-            span.classList.add('gl-button-text');
-            const emoji = recipe.emoji || "👨‍🍳"
-            span.textContent = emoji + " " + recipe.name;
-            newButton.appendChild(span);
-            // on click
-            newButton.addEventListener('click', (event) => {
-                event.stopPropagation();
-                recipeSelected(recipe).then(() => {});
-            });
-            // append
-            parentElement.appendChild(newButton);
+        let promise = allRecipes();
+        promise.then(recipes => {
+            recipes.forEach(recipe => {
+                const newButton = document.createElement('btn');
+                //prepare
+                newButton.classList.add('btn', 'chef-btn-recipe', 'btn-default', 'btn-md', 'gl-button', 'gl-ml-3');
+                const span = document.createElement('span');
+                span.classList.add('gl-button-text');
+                const emoji = recipe.emoji || "👨‍🍳"
+                span.textContent = emoji + " " + recipe.name;
+                newButton.appendChild(span);
+                // on click
+                newButton.addEventListener('click', (event) => {
+                    event.stopPropagation();
+                    recipeSelected(recipe).then(() => {
+                    });
+                });
+                // append
+                parentElement.appendChild(newButton);
+            })
         });
     }
 })();

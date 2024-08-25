@@ -1,6 +1,32 @@
-<html>
-<head></head>
-<body>
-<p>all recipes</p>
+<!DOCTYPE html>
+<!--suppress HtmlUnknownTarget -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Book</title>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="/recipe/all.css">
+</head>
+<body class="container">
+<h1 class="mb-4">Recipes</h1>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Emoji</th>
+        <th scope="col">Name</th>
+        <th scope="col">Branch</th>
+        <th scope="col">Variables</th>
+        <th scope="col">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+<button id="add-recipe" class="btn btn-primary">Add Recipe</button>
+
+<script src="/bootstrap/js/bootstrap.js"></script>
+<script src="/recipe/all.js"></script>
 </body>
 </html>

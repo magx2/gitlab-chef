@@ -8,43 +8,72 @@
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="/recipe/new.css">
 </head>
-<body class="container mt-5">
-<h1 class="mb-4">Recipe Book</h1>
+<body class="container">
+<h1 class="mb-4">Add Recipe</h1>
 
-<div class="card mb-4">
-    <div class="card-body">
-        <h2 class="card-title">Add Recipe</h2>
-        <div class="form-group">
-            <label for="recipeName">Recipe Name:</label>
-            <input type="text" id="recipeName" class="form-control" placeholder="Enter recipe name">
+<form id="new-recipe-form">
+    <div class="form-group row mb-2">
+        <label for="name" class="col-sm-2 col-form-label">Name</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Enter name"
+                   required>
+            <small id="nameHelp" class="form-text text-muted">Name of the recipe</small>
+            <small id="name-duplicated" class="text-danger d-none">
+                Recipe with given name already exists!
+            </small>
         </div>
-
-        <div class="form-group">
-            <label for="recipeEmoji">Recipe Emoji (optional):</label>
-            <input type="text" id="recipeEmoji" class="form-control" placeholder="Enter emoji">
-        </div>
-
-        <div id="variables" class="mb-3">
-            <h4>Recipe Variables</h4>
-            <div class="variable form-row align-items-center mb-2">
-                <div class="col">
-                    <input type="text" class="form-control key" placeholder="Enter key">
-                </div>
-                <div class="col">
-                    <input type="text" class="form-control value" placeholder="Enter value">
-                </div>
-                <div class="col-auto">
-                    <button class="btn btn-danger remove-variable">Remove</button>
-                </div>
-            </div>
-        </div>
-        <button id="add-variable" class="btn btn-secondary mb-3">Add Another Variable</button>
-        <button id="add-recipe" class="btn btn-primary">Add Recipe</button>
     </div>
-</div>
 
-<h2>Recipes</h2>
-<div id="recipes" class="mb-4"></div>
+    <div class="form-group row mb-2">
+        <label for="emoji" class="col-sm-2 col-form-label">Emoji</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="emoji" aria-describedby="emojiHelp" placeholder="Enter emoji">
+            <small id="emojiHelp" class="form-text text-muted">(optional) Emoji to be used with the button. If not
+                passed default 👨‍🍳 will be used</small>
+        </div>
+    </div>
+
+    <div class="form-group row mb-2">
+        <label for="branch" class="col-sm-2 col-form-label">Branch Regex</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="branch" aria-describedby="branchHelp"
+                   placeholder="Enter branch pattern">
+            <small id="branchHelp" class="form-text text-muted">(optional) Branch regex to choose on which branches add
+                recipe</small>
+        </div>
+    </div>
+
+    <div class="form-group row mb-2">
+        <label>Variables</label>
+        <small class="form-text text-muted">Variables to inject with this recipe</small>
+
+        <div id="variables"></div>
+
+        <div class="form-group row">
+            <div class="col-sm-2">&nbsp;</div>
+            <div class="col-sm-8">
+                <small id="no-variables" class="text-danger d-none">
+                    Please fill at least 1 variable
+                </small>
+            </div>
+            <div class="col-sm-2 text-end">&nbsp;</div>
+        </div>
+
+
+        <div class="form-group row">
+            <div class="col-sm-2">&nbsp;</div>
+            <div class="col-sm-8">
+                <button id="add-variable" type="button" class="btn btn-secondary">Add New Variable</button>
+            </div>
+            <div class="col-sm-2 text-end">&nbsp;</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <button id="see-all" type="button" class="btn btn-secondary">See all recipes</button>
+    </div>
+</form>
 
 <script src="/bootstrap/js/bootstrap.js"></script>
 <script src="/recipe/new.js"></script>
