@@ -3,7 +3,10 @@
     "dev:firefox:run:watch": "cd dist/firefox && web-ext run",
     "help": "webextension-toolbox dev firefox --help",
     "dev:firefox:dev": "webextension-toolbox dev firefox",
-    "dev:firefox:build": "webextension-toolbox build firefox"
+    "build:firefox": "webextension-toolbox build firefox",
+    "dev:chrome:dev": "webextension-toolbox dev chrome",
+    "build:chrome": "webextension-toolbox build chrome",
+    "build": "build:firefox && build:chrome"
   },
   "author": "Martin Grzeslowski",
   "license": "GPLv3",
