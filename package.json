@@ -16,5 +16,15 @@
   "devDependencies": {
     "@webextension-toolbox/webextension-toolbox": "^7.1.1",
     "web-ext": "^7.5.0"
-  }
+  },
+  "funding": [
+    {
+      "type": "ko-fi",
+      "url": "https://ko-fi.com/S6S8UBWWY"
+    },
+    {
+      "type": "buycofee",
+      "url": "https://buycoffee.to/magx2"
+    }
+  ]
 }
