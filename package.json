@@ -16,8 +16,8 @@
   "description": "Add some recipes to run your pipelines!",
   "devDependencies": {
     "@webextension-toolbox/webextension-toolbox": "^7.1.1",
-    "web-ext": "^7.5.0",
-    "release-it": "^16.1.0"
+    "release-it": "^16.1.0",
+    "web-ext": "^7.5.0"
   },
   "funding": [
     {
@@ -28,5 +28,8 @@
       "type": "buycofee",
       "url": "https://buycoffee.to/magx2"
     }
-  ]
+  ],
+  "dependencies": {
+    "@popperjs/core": "^2.11.8"
+  }
 }
