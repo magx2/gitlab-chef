@@ -3,7 +3,7 @@
     "dev:firefox:run:watch": "cd dist/firefox && web-ext run",
     "help": "webextension-toolbox dev firefox --help",
     "dev:firefox:dev": "webextension-toolbox dev firefox",
-    "dev:firefox:build": "webextension-toolbox build --devtool=inline-cheap-source-map  firefox"
+    "dev:firefox:build": "webextension-toolbox build firefox"
   },
   "author": "Martin Grzeslowski",
   "license": "GPLv3",
