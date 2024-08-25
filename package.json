@@ -11,7 +11,7 @@
   },
   "author": "Martin Grzeslowski",
   "license": "GPLv3",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "name": "gitlab-chef",
   "description": "Add some recipes to run your pipelines!",
   "devDependencies": {
