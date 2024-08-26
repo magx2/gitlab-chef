@@ -21,6 +21,7 @@
                 const nextTextarea = valueElement?.nextElementSibling;
                 if (nextTextarea && nextTextarea.tagName.toLowerCase() === 'textarea') {
                     nextTextarea.value = variable.value;
+                    nextTextarea.dispatchEvent(new Event('change'));
                 }
                 // sleep to allow events to trigger
                 // new rows in "Run pipeline" page are added dynamically
