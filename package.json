@@ -8,7 +8,7 @@
     "build": "npm run build:firefox && npm run build:chrome",
     "release:pre": "release-it minor",
     "release:post": "release-it --ci --no-increment --no-git --github.release --github.update --github.assets=packages/* --no-github.draft",
-    "release": "npm run release:pre && npm run build && npm run release:pre"
+    "release": "npm run release:pre && npm run build && npm run release:post"
   },
   "author": "Martin Grzeslowski",
   "license": "GPLv3",
