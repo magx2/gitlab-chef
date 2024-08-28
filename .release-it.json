@@ -3,7 +3,6 @@
     "publish": false
   },
   "github": {
-    "draft": true,
     "release": true
   }
 }
