@@ -4,7 +4,6 @@
   },
   "github": {
     "draft": true,
-    "release": true,
-    "assets": ["packages/*"]
+    "release": true
   }
 }
