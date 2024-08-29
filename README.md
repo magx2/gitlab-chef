@@ -1,5 +1,7 @@
 # Gitlab Chef
 
+[Firefox Plugin](https://addons.mozilla.org/pl/firefox/addon/gitlab-chef/)
+
 Gitlab Chef is a plugin designed to enhance your GitLab CI/CD experience by providing additional functionality to the pipeline view. This plugin allows you to add extra buttons on the new pipeline view, offering a more streamlined and customizable way to run pipelines.
 
 ![Run Pipeline.png](docs/run_pipeline.png)
